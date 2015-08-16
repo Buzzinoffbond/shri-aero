@@ -1,0 +1,2186 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Табло аэропорта</title>
+    <meta name="description" content="Вступительное задание в Школу Разработки Интерфейсов.">
+    <meta name="viewport" content="widdiv=device-widdiv, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--[if IE]>
+            <script src="js/vendor/better-dom-legacy.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <section class="sch">
+        <div class="sch_container">
+            <input type="checkbox" id="departure" class="sch_checkbox_departure" checked>
+            <input type="checkbox" id="arrival" class="sch_checkbox_arrival" checked>
+            <div class="sch_sticky">
+                <div class="sch_sticky_inner">
+                    <label for="departure" class="sch_label_departure"><img class="sch_label_icon" src="img/flight_departure.svg" alt="Вылет"> Вылет</label>
+                    <label for="arrival" class="sch_label_arrival"><img class="sch_label_icon" src="img/flight_arrival.svg" alt="Прилет"> Прилет</label>
+                    <div class="sch_table_head">
+                        <div class="sch_item_type">Тип</div>
+                        <div class="sch_item_time">Время</div>
+                        <div class="sch_item_flight">Рейс</div>
+                        <div class="sch_item_airport">
+                            <span class="sch_item_airport_short" title="Направление">Напр.</span>
+                            <span class="sch_item_airport_full">Направление</span></div>
+                        <div class="sch_item_company">
+                            <span class="sch_item_company_full">Авиакомпания</span>
+                        </div>
+                        <div class="sch_item_plane">
+                            <span class="sch_item_plane_full">Тип самолета</span>
+                            <span class="sch_item_plane_short">Самолет</span></div>
+                        <div class="sch_item_status">Статус</div>
+                    </div>
+                </div>
+            </div>
+            <table class="sch_table">
+                <tbody class="sch_items">
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">17:00</div>
+                                    <div class="sch_item_flight">НН118</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">DME</span>
+                                        <span class="sch_item_airport_full">Домодедово</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/vimavia.gif" alt="Вим-Авиа" title="Вим-Авиа"></span>
+                                        <span class="sch_item_company_full">Вим-Авиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 757-200</span>
+                                        <span class="sch_item_plane_short">Б757-2</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_error">Рейс отменен</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_note">
+                                        <b>Рейс отменен</b>
+                                        <br>
+                                        <a href="#">Посмотреть другие рейсы по данному направлению</a>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">17:20</div>
+                                    <div class="sch_item_flight">Д261</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Череповец</span>
+                                        <span class="sch_item_airport_short">CEE</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/severstal.gif" alt="Северсталь" title="Северсталь"></span>
+                                        <span class="sch_item_company_full">Северсталь</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full" title="Bombardier CRJ200">Bombardier CRJ200</span>
+                                        <span class="sch_item_plane_short">ЦР200</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>15:58</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>17:20</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">17:35</div>
+                                    <div class="sch_item_flight">СУ1129</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">SVO</span>
+                                        <span class="sch_item_airport_full">Шереметьево</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/aeroflot.gif" alt="Аэрофлот" title="Аэрофлот"></span>
+                                        <span class="sch_item_company_full">Аэрофлот</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А321</span>
+                                        <span class="sch_item_plane_short">А321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 15:35 - 17:05</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 17:05 - 17:35</b>
+                                        <br>Выход 11
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>17:35</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">17:40</div>
+                                    <div class="sch_item_flight">ДР134</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А321</span>
+                                        <span class="sch_item_plane_short">А321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 15:55 - 17:20</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 17:20 - 17:40</b>
+                                        <br>Выход 15
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>17:40</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">17:55</div>
+                                    <div class="sch_item_flight">ДР117</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_warning">Прилет задержан до 18:10</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>15:51</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>18:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">18:25</div>
+                                    <div class="sch_item_flight">ПЛ6652</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Санкт-Петербург</span>
+                                        <span class="sch_item_airport_short">LED</span>
+                                        <span class="sch_item_airport_full">Пулково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/russia.gif" alt="Россия" title="Россия"></span>
+                                        <span class="sch_item_company_full">Россия</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-320</span>
+                                        <span class="sch_item_plane_short">А-320</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Вылетел</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>18:25</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">18:40</div>
+                                    <div class="sch_item_flight">УН2508</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Новосибирск</span>
+                                        <span class="sch_item_airport_short">OVB</span>
+                                        <span class="sch_item_airport_full">Толмачёво</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/transaero.png" alt="Трансаэро" title="Трансаэро"></span>
+                                        <span class="sch_item_company_full">Трансаэро</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-300</span>
+                                        <span class="sch_item_plane_short">Б767-3</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 16:50 - 18:10</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 18:10 - 18:30</b>
+                                        <br>Выход 11
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>18:40</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">18:55</div>
+                                    <div class="sch_item_flight">ДР112</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-800</span>
+                                        <span class="sch_item_plane_short">Б767-8</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Регистрация закончена</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 17:05 - 18:35</b>
+                                        <br>Стойки 28,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 18:35 - 18:55</b>
+                                        <br>Выход 7
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>18:55</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">19:10</div>
+                                    <div class="sch_item_flight">ТК298</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Стамбул</span>
+                                        <span class="sch_item_airport_short">IST</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company" title="Турецкие Авиалинии">
+                                        <span class="sch_item_company_image"><img src="img/logos/turk.gif" alt="Турецкие Авиалинии"></span>
+                                        <span class="sch_item_company_full" title="Турецкие Авиалинии">Турецкие Авиалинии</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-700</span>
+                                        <span class="sch_item_plane_short">Б737-7</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 17:05 - 18:35</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 18:35 - 18:55</b>
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>19:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">19:45</div>
+                                    <div class="sch_item_flight">Д95350</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Краснодар</span>
+                                        <span class="sch_item_airport_short">KRR</span>
+                                        <span class="sch_item_airport_full">Пашковский</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/donavia.png" alt="Донавиа" title="Донавиа"></span></span>
+                                        <span class="sch_item_company_full">Донавиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-319</span>
+                                        <span class="sch_item_plane_short">А-319</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Прибыл</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>18:35</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>19:45</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">20:10</div>
+                                    <div class="sch_item_flight">СУ1130</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">SVO</span>
+                                        <span class="sch_item_airport_full">Шереметьево</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/aeroflot.gif" alt="Аэрофлот" title="Аэрофлот"></span></span>
+                                        <span class="sch_item_company_full">Аэрофлот</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-321</span>
+                                        <span class="sch_item_plane_short">А-321</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Багаж</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>17:30</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>20:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">22:05</div>
+                                    <div class="sch_item_flight">ДР117</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Багаж</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>19:51</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>22:05</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">22:20</div>
+                                    <div class="sch_item_flight">ПЛ6652</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Санкт-Петербург</span>
+                                        <span class="sch_item_airport_short">LED</span>
+                                        <span class="sch_item_airport_full">Пулково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/russia.gif" alt="Россия" title="Россия"></span>
+                                        <span class="sch_item_company_full">Россия</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-320</span>
+                                        <span class="sch_item_plane_short">А-320</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Вылетел</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>22:21</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">22:30</div>
+                                    <div class="sch_item_flight">УН2508</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Новосибирск</span>
+                                        <span class="sch_item_airport_short">OVB</span>
+                                        <span class="sch_item_airport_full">Толмачёво</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/transaero.png" alt="Трансаэро" title="Трансаэро"></span>
+                                        <span class="sch_item_company_full">Трансаэро</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-300</span>
+                                        <span class="sch_item_plane_short">Б767-3</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Регистрация закончена</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 20:30 - 21:50</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 21:50 - 22:10</b>
+                                        <br>Выход 11
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>22:30</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">22:55</div>
+                                    <div class="sch_item_flight">ДР118</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-800</span>
+                                        <span class="sch_item_plane_short">Б767-8</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Регистрация</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 20:55 - 22:15</b>
+                                        <br>Стойки 28,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 22:15 - 22:35</b>
+                                        <br>Выход 7
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>22:55</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">23:30</div>
+                                    <div class="sch_item_flight">ХИ686</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Ташкент</span>
+                                        <span class="sch_item_airport_short">TAS</span>
+                                        <span class="sch_item_airport_full">Южный</span>
+                                    </div>
+                                    <div class="sch_item_company" title="Узбексткие авиалинии">
+                                        <span class="sch_item_company_image"><img src="img/logos/uzbek.gif" alt="Узбексткие авиалинии"></span>
+                                        <span class="sch_item_company_full">Узбексткие авиалинии</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А320</span>
+                                        <span class="sch_item_plane_short">А320</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_warning">Вылет задержан до 23:55</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 21:55 - 23:15</b>
+                                        <br>Стойки 28,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 23:15 - 23:35</b>
+                                        <br>Выход 7
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>23:55</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_nextday">
+                        <td>
+                            32 Августа
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">00:20</div>
+                                    <div class="sch_item_flight">Д95319</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Екатеринбург</span>
+                                        <span class="sch_item_airport_short">SVX</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/donavia.png" alt="Донавиа" title="Донавиа"></span>
+                                        <span class="sch_item_company_full">Донавиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">Вылетел</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>31.08 22:00</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Ожидается
+                                        <br><b>00:17</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">01:10</div>
+                                    <div class="sch_item_flight">ДР335</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Уфа</span>
+                                        <span class="sch_item_airport_short">UFA</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-800</span>
+                                        <span class="sch_item_plane_short">Б767-8</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_good">Регистрация</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 23:10 - 00:30</b>Стойки 29,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 00:30 - 00:50</b>
+                                        <br>Выход 15
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>01:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">02:20</div>
+                                    <div class="sch_item_flight">УН2525</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Омск</span>
+                                        <span class="sch_item_airport_short">OMS</span>
+                                        <span class="sch_item_airport_full">Центральный</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/transaero.png" alt="Трансаэро" title="Трансаэро"></span>
+                                        <span class="sch_item_company_full">Трансаэро</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">Вылетел</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">02:25</div>
+                                    <div class="sch_item_flight">YC213</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Тюмень</span>
+                                        <span class="sch_item_airport_short">TJM</span>
+                                        <span class="sch_item_airport_full">Рощино</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/yamal.gif" alt="Ямал" title="Ямал"></span>
+                                        <span class="sch_item_company_full">Ямал</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 757-200</span>
+                                        <span class="sch_item_plane_short">Б757-2</span>
+                                    </div>
+                                    <div class="sch_item_status">Вылетел</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">02:30</div>
+                                    <div class="sch_item_flight">НН111</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">DME</span>
+                                        <span class="sch_item_airport_full">Домодедово</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/vimavia.gif" alt="Вим-Авиа" title="Вим-Авиа"></span>
+                                        <span class="sch_item_company_full">Вим-Авиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 757-200</span>
+                                        <span class="sch_item_plane_short">Б757-2</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_error">Рейс отменен</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">02:40</div>
+                                    <div class="sch_item_flight">Д263</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Череповец</span>
+                                        <span class="sch_item_airport_short">CEE</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/severstal.gif" alt="Северсталь" title="Северсталь"></span>
+                                        <span class="sch_item_company_full">Северсталь</span>
+                                    </div>
+                                    <div class="sch_item_plane" title="Bombardier CRJ200">
+                                        <span class="sch_item_plane_full">Bombardier CRJ200</span>
+                                        <span class="sch_item_plane_short">ЦР200</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">02:45</div>
+                                    <div class="sch_item_flight">СУ1129</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">SVO</span>
+                                        <span class="sch_item_airport_full">Шереметьево</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/aeroflot.gif" alt="Аэрофлот" title="Аэрофлот"></span>
+                                        <span class="sch_item_company_full">Аэрофлот</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А321</span>
+                                        <span class="sch_item_plane_short">А321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 00:45 - 02:05</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 02:05 - 02:25</b>
+                                        <br>Выход 11
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>02:45</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">03:05</div>
+                                    <div class="sch_item_flight">ДР134</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А321</span>
+                                        <span class="sch_item_plane_short">А321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 01:05 - 02:25</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 02:25 - 02:45</b>
+                                        <br>Выход 15
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>03:05</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">03:35</div>
+                                    <div class="sch_item_flight">ТК296</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Стамбул</span>
+                                        <span class="sch_item_airport_short">IST</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company" title="Турецкие Авиалинии">
+                                        <span class="sch_item_company_image"><img src="img/logos/turk.gif" alt="Турецкие Авиалинии"></span>
+                                        <span class="sch_item_company_full" title="Турецкие Авиалинии">Турецкие Авиалинии</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-700</span>
+                                        <span class="sch_item_plane_short">Б737-7</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 01:35 - 02:55</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 02:55 - 03:15</b>
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>03:35</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">03:45</div>
+                                    <div class="sch_item_flight">Д95340</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Краснодар</span>
+                                        <span class="sch_item_airport_short">KRR</span>
+                                        <span class="sch_item_airport_full">Пашковский</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/donavia.png" alt="Донавиа" title="Донавиа"></span></span>
+                                        <span class="sch_item_company_full">Донавиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-319</span>
+                                        <span class="sch_item_plane_short">А-319</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>02:35</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>03:45</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">04:10</div>
+                                    <div class="sch_item_flight">СУ1133</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">SVO</span>
+                                        <span class="sch_item_airport_full">Шереметьево</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/aeroflot.gif" alt="Аэрофлот" title="Аэрофлот"></span></span>
+                                        <span class="sch_item_company_full">Аэрофлот</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-321</span>
+                                        <span class="sch_item_plane_short">А-321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>02:30</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>04:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">04:35</div>
+                                    <div class="sch_item_flight">ДР117</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>02:51</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>04:35</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">05:00</div>
+                                    <div class="sch_item_flight">ПЛ6652</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Санкт-Петербург</span>
+                                        <span class="sch_item_airport_short">LED</span>
+                                        <span class="sch_item_airport_full">Пулково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/russia.gif" alt="Россия" title="Россия"></span>
+                                        <span class="sch_item_company_full">Россия</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-320</span>
+                                        <span class="sch_item_plane_short">А-320</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>05:00</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">05:10</div>
+                                    <div class="sch_item_flight">УН2608</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Новосибирск</span>
+                                        <span class="sch_item_airport_short">OVB</span>
+                                        <span class="sch_item_airport_full">Толмачёво</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/transaero.png" alt="Трансаэро" title="Трансаэро"></span>
+                                        <span class="sch_item_company_full">Трансаэро</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-300</span>
+                                        <span class="sch_item_plane_short">Б767-3</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 02:30 - 04:50</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 04:50 - 05:10</b>
+                                        <br>Выход 11
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>05:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">05:35</div>
+                                    <div class="sch_item_flight">ДР112</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full" title="Победа">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-800</span>
+                                        <span class="sch_item_plane_short">Б767-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 03:55 - 05:05</b>
+                                        <br>Стойки 28,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 05:05 - 05:35</b>
+                                        <br>Выход 7
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>05:35</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">05:55</div>
+                                    <div class="sch_item_flight">ХИ686</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Ташкент</span>
+                                        <span class="sch_item_airport_short">TAS</span>
+                                        <span class="sch_item_airport_full">Южный</span>
+                                    </div>
+                                    <div class="sch_item_company" title="Узбексткие авиалинии">
+                                        <span class="sch_item_company_image"><img src="img/logos/uzbek.gif" alt="Узбексткие авиалинии"></span>
+                                        <span class="sch_item_company_full">Узбексткие авиалинии</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А320</span>
+                                        <span class="sch_item_plane_short">А320</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_warning">Вылет задержан до 06:30</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 20:55 - 22:15</b>
+                                        <br>Стойки 28,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 22:15 - 22:35</b>
+                                        <br>Выход 7
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>22:55</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">06:20</div>
+                                    <div class="sch_item_flight">Д95319</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Екатеринбург</span>
+                                        <span class="sch_item_airport_short">SVX</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/donavia.png" alt="Донавиа" title="Донавиа"></span>
+                                        <span class="sch_item_company_full">Донавиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>15.08 22:00</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Ожидается
+                                        <br><b>00:17</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">06:25</div>
+                                    <div class="sch_item_flight">ДР335</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Уфа</span>
+                                        <span class="sch_item_airport_short">UFA</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full" title="Победа">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-800</span>
+                                        <span class="sch_item_plane_short">Б767-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 23:10 - 00:30</b>Стойки 29,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 00:30 - 00:50</b>
+                                        <br>Выход 15
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>01:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">07:05</div>
+                                    <div class="sch_item_flight">УН2525</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Омск</span>
+                                        <span class="sch_item_airport_short">OMS</span>
+                                        <span class="sch_item_airport_full">Центральный</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/transaero.png" alt="Трансаэро" title="Трансаэро"></span>
+                                        <span class="sch_item_company_full">Трансаэро</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">07:15</div>
+                                    <div class="sch_item_flight">YC213</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Тюмень</span>
+                                        <span class="sch_item_airport_short">TJM</span>
+                                        <span class="sch_item_airport_full">Рощино</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/yamal.gif" alt="Ямал" title="Ямал"></span>
+                                        <span class="sch_item_company_full">Ямал</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 757-200</span>
+                                        <span class="sch_item_plane_short">Б757-2</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">07:25</div>
+                                    <div class="sch_item_flight">НН111</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">DME</span>
+                                        <span class="sch_item_airport_full">Домодедово</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/vimavia.gif" alt="Вим-Авиа" title="Вим-Авиа"></span>
+                                        <span class="sch_item_company_full">Вим-Авиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 757-200</span>
+                                        <span class="sch_item_plane_short">Б757-2</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_error">Рейс отменен</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">07:35</div>
+                                    <div class="sch_item_flight">Д263</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Череповец</span>
+                                        <span class="sch_item_airport_short">CEE</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/severstal.gif" alt="Северсталь" title="Северсталь"></span>
+                                        <span class="sch_item_company_full">Северсталь</span>
+                                    </div>
+                                    <div class="sch_item_plane" title="Bombardier CRJ200">
+                                        <span class="sch_item_plane_full">Bombardier CRJ200</span>
+                                        <span class="sch_item_plane_short">ЦР200</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">07:40</div>
+                                    <div class="sch_item_flight">СУ1129</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">SVO</span>
+                                        <span class="sch_item_airport_full">Шереметьево</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/aeroflot.gif" alt="Аэрофлот" title="Аэрофлот"></span>
+                                        <span class="sch_item_company_full">Аэрофлот</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А321</span>
+                                        <span class="sch_item_plane_short">А321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 00:45 - 02:05</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 02:05 - 02:25</b>
+                                        <br>Выход 11
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>02:45</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">07:55</div>
+                                    <div class="sch_item_flight">ДР134</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">VKO</span>
+                                        <span class="sch_item_airport_full">Внуково</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А321</span>
+                                        <span class="sch_item_plane_short">А321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 01:05 - 02:25</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 02:25 - 02:45</b>
+                                        <br>Выход 15
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>03:05</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">08:00</div>
+                                    <div class="sch_item_flight">ТК296</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Стамбул</span>
+                                        <span class="sch_item_airport_short">IST</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company" title="Турецкие Авиалинии">
+                                        <span class="sch_item_company_image"><img src="img/logos/turk.gif" alt="Турецкие Авиалинии"></span>
+                                        <span class="sch_item_company_full">Турецкие Авиалинии</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-700</span>
+                                        <span class="sch_item_plane_short">Б737-7</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 01:35 - 02:55</b>
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 02:55 - 03:15</b>
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>03:35</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">08:10</div>
+                                    <div class="sch_item_flight">Д95350</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Краснодар</span>
+                                        <span class="sch_item_airport_short">KRR</span>
+                                        <span class="sch_item_airport_full">Пашковский</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/donavia.png" alt="Донавиа" title="Донавиа"></span></span>
+                                        <span class="sch_item_company_full">Донавиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-319</span>
+                                        <span class="sch_item_plane_short">А-319</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>18:35</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>19:45</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">08:15</div>
+                                    <div class="sch_item_flight">СУ1130</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Москва</span>
+                                        <span class="sch_item_airport_short">SVO</span>
+                                        <span class="sch_item_airport_full">Шереметьево</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image">
+                                                <img src="img/logos/aeroflot.gif" alt="Аэрофлот" title="Аэрофлот">
+                                            </span>
+                                        <span class="sch_item_company_full">Аэрофлот</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А-321</span>
+                                        <span class="sch_item_plane_short">А-321</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>17:30</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Прилет
+                                        <br><b>20:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">08:30</div>
+                                    <div class="sch_item_flight">ХИ686</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Ташкент</span>
+                                        <span class="sch_item_airport_short">TAS</span>
+                                        <span class="sch_item_airport_full">Южный</span>
+                                    </div>
+                                    <div class="sch_item_company" title="Узбексткие авиалинии">
+                                        <span class="sch_item_company_image"><img src="img/logos/uzbek.gif" alt="Узбексткие авиалинии"></span>
+                                        <span class="sch_item_company_full">Узбексткие авиалинии</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Аэробус А320</span>
+                                        <span class="sch_item_plane_short">А320</span>
+                                    </div>
+                                    <div class="sch_item_status sch_status_warning">Вылет задержан до 08:55</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 20:55 - 22:15</b>
+                                        <br>Стойки 28,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 22:15 - 22:35</b>
+                                        <br>Выход 7
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>22:55</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">09:00</div>
+                                    <div class="sch_item_flight">Д95319</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Екатеринбург</span>
+                                        <span class="sch_item_airport_short">SVX</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/donavia.png" alt="Донавиа" title="Донавиа"></span>
+                                        <span class="sch_item_company_full">Донавиа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>15.08 22:00</b>
+                                    </div>
+                                    <div class="sch_item_takingon">
+                                        Ожидается
+                                        <br><b>00:17</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_departure">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_departure.svg" alt="Вылет">
+                                    </div>
+                                    <div class="sch_item_time">09:10</div>
+                                    <div class="sch_item_flight">ДР335</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Уфа</span>
+                                        <span class="sch_item_airport_short">UFA</span>
+                                        <span class="sch_item_airport_full"></span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/pobeda.png" alt="Победа" title="Победа"></span>
+                                        <span class="sch_item_company_full">Победа</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 767-800</span>
+                                        <span class="sch_item_plane_short">Б767-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_registration">
+                                        Регистрация
+                                        <br><b> 23:10 - 00:30</b>Стойки 29,30
+                                    </div>
+                                    <div class="sch_item_boarding">
+                                        Посадка
+                                        <br><b> 00:30 - 00:50</b>
+                                        <br>Выход 15
+                                    </div>
+                                    <div class="sch_item_takingoff">
+                                        Вылет
+                                        <br><b>01:10</b>
+                                    </div>
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                        <br>
+                                        <a href="#register">Онлайн-регистрация</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">09:15</div>
+                                    <div class="sch_item_flight">УН2525</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Омск</span>
+                                        <span class="sch_item_airport_short">OMS</span>
+                                        <span class="sch_item_airport_full">Центральный</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/transaero.png" alt="Трансаэро" title="Трансаэро"></span>
+                                        <span class="sch_item_company_full">Трансаэро</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 737-800</span>
+                                        <span class="sch_item_plane_short">Б737-8</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="sch_item sch_item_arrival">
+                        <td>
+                            <details class="sch_item_details">
+                                <summary class="sch_item_summary">
+                                    <div class="sch_item_type">
+                                        <img src="img/flight_arrival.svg" alt="Прилет">
+                                    </div>
+                                    <div class="sch_item_time">09:25</div>
+                                    <div class="sch_item_flight">YC213</div>
+                                    <div class="sch_item_airport">
+                                        <span class="sch_item_airport_medium">Тюмень</span>
+                                        <span class="sch_item_airport_short">TJM</span>
+                                        <span class="sch_item_airport_full">Рощино</span>
+                                    </div>
+                                    <div class="sch_item_company">
+                                        <span class="sch_item_company_image"><img src="img/logos/yamal.gif" alt="Ямал" title="Ямал"></span>
+                                        <span class="sch_item_company_full">Ямал</span>
+                                    </div>
+                                    <div class="sch_item_plane">
+                                        <span class="sch_item_plane_full">Боинг 757-200</span>
+                                        <span class="sch_item_plane_short">Б757-2</span>
+                                    </div>
+                                    <div class="sch_item_status">По расписанию</div>
+                                </summary>
+                                <div class="sch_item_expanded clearfix">
+                                    <div class="sch_item_links">
+                                        <a href="#scheme">Схема аэропорта</a>
+                                        <br>
+                                        <a href="#contact">Контакты авиакомпании</a>
+                                    </div>
+                                </div>
+                            </details>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="scheme" class="sch_modal">
+            <div>
+                <h2>Схема аэропорта</h2>
+                <img src="img/scheme.jpg" class="sch_scheme_image">
+                <a href="#close" title="Закрыть" class="sch_modal_close">X</a></p>
+            </div>
+        </div>
+        <div id="contact" class="sch_modal">
+            <div>
+                <h2>Контакты авиакомпании</h2>
+                <ul>
+                    <li>Сайт: <a href="#">http://companywebsite.aero</a></li>
+                    <li>Email: <a href="mailto:#">info@companywebsite.aero</a></li>
+                    <li>Телефон: <a href="tel:#">+79261234567</a></li>
+                </ul>
+                <a href="#close" title="Закрыть" class="sch_modal_close">X</a></p>
+            </div>
+        </div>
+        <div id="register" class="sch_modal">
+            <div>
+                <h2>Онлайн-регистрация</h2>
+                <ul>
+                    <li>Вы можете зарегистрироваться на рейс из дома или офиса;</li>
+                    <li>Онлайн-регистрация начинается за 24 часа и заканчивается за 45 минут до вылета рейса*;</li>
+                    <li>Вы сами выбираете удобное для Вас место в салоне самолета;</li>
+                    <li>Вы сами распечатываете посадочный талон. По прибытии в аэропорт Вам нет необходимости обращаться на стойку регистрации.</li>
+                </ul>
+                <a href="#">Начать</a>
+                <a href="#close" title="Закрыть" class="sch_modal_close">X</a></p>
+            </div>
+        </div>
+    </section>
+    <script src="js/scripts.js"></script>
+    <script>
+    if (!isDetailsSupported) {
+        /* Details polifyl. More on http://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/ */
+        document.write('<script src="js/vendor/better-dom.min.js"><\/script>');
+        document.write('<script src="js/vendor/better-details-polyfill.js"><\/script>');
+    }
+    </script>
+</body>
+
+</html>

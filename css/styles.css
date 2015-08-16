@@ -1,0 +1,549 @@
+* {
+    box-sizing: border-box
+}
+
+html {
+    color: #222;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.sch_container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sch_checkbox_arrival,
+.sch_checkbox_departure {
+    display: none;
+}
+
+.sch_checkbox_departure:not(checked) ~ .sch_table .sch_item_departure,
+.sch_checkbox_arrival:not(checked) ~ .sch_table .sch_item_arrival {
+    display: none;
+}
+
+.sch_checkbox_departure:checked ~ .sch_table .sch_item_departure,
+.sch_checkbox_arrival:checked ~ .sch_table .sch_item_arrival {
+    display: table-row;
+}
+
+.sch_checkbox_arrival,
+.sch_checkbox_departure {
+    display: none;
+}
+
+.sch_checkbox_arrival:checked ~ .sch_sticky .sch_label_arrival,
+.sch_checkbox_departure:checked ~ .sch_sticky .sch_label_departure {
+    color: #222;
+    border: 3px solid #222;
+}
+
+.sch_label_departure,
+.sch_label_arrival {
+    display: inline-block;
+    padding: 0.5em;
+    border: 3px dashed #BBB;
+    color: #BBB;
+    cursor: pointer;
+}
+
+.sch_label_icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+}
+
+.sch_table {
+    width: 100%;
+    margin-top: 5.9em;
+    position: relative;
+    overflow: hidden;
+    min-width: 360px;
+}
+
+.sch_items:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: repeating-linear-gradient(#FFF, #FFF 2.375em, #FBFAFD 2.375em, #FBFAFD 4.75em);
+    z-index: -3;
+}
+
+.sch_sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    border-bottom: 1px solid #BBB;
+    z-index: 20;
+    padding: 0.5em 0;
+}
+
+.sch_sticky_inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sch_table_head {
+    text-align: left;
+    font-weight: 700;
+    padding: 0.4em 0 0 0;
+}
+
+.sch_item:hover {
+    background-color: #d0e4f0;
+}
+
+.sch_item_summary {
+    white-space: nowrap;
+    height: 2.375em;
+}
+
+.sch_item_summary>div {
+    position: relative;
+}
+
+.sch_item_summary>div:hover:after {
+    content: '';
+    background-color: #d0e4f0;
+    position: absolute;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+}
+
+details.sch_item_details[open] .sch_item_summary {
+    background-color: #BBB;
+}
+
+details.sch_item_details {
+    height: 2.375em;
+}
+
+details.sch_item_details[open] {
+    min-height: 11.875em;
+}
+
+details.sch_item_details[open] .sch_item_expanded {
+    min-height: 9.5em;
+}
+
+.sch_item_expanded {
+    background-color: #FFF;
+    border-width: 0 3px 3px 3px;
+    border-style: solid;
+    border-color: #BBB;
+    border-radius: 0 0 3px 3px;
+}
+
+.shc_item_registration {
+    float: left;
+}
+
+.sch_item_summary {
+    cursor: pointer;
+}
+
+.sch_item_expanded {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.sch_item_summary > div,
+.sch_table_head > div {
+    padding-left: 0.2em;
+}
+
+.sch_item_summary > div {
+    height: 100%;
+    line-height: 2.375em;
+}
+
+.sch_item_plane {
+    display: none;
+}
+
+.sch_item_plane > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sch_item_plane_full {
+    display: none;
+}
+
+.sch_item_airport_short,
+.sch_item_airport_medium,
+.sch_item_airport_full {
+    font-weight: 700;
+}
+
+.sch_item_airport_medium,
+.sch_item_airport_full,
+.sch_item_company_full {
+    display: none;
+}
+
+.sch_table_head .sch_item_type,
+.sch_item_summary .sch_item_type {
+    min-width: 1.8125em;
+    float: left;
+    padding-bottom: 0;
+}
+
+.sch_item_type img {
+    width: 1.5rem;
+    vertical-align: middle;
+}
+
+.sch_item_time {
+    min-width: 3.43em;
+    float: left;
+}
+
+.sch_item_flight {
+    min-width: 3.9em;
+    float: left;
+}
+
+.sch_item_airport {
+    display: none;
+}
+
+.sch_item_company {
+    display: none;
+    float: left;
+}
+
+.sch_item_company_image {
+    display: inline-block;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.sch_item_plane {
+    float: left;
+}
+
+.sch_item_airport_short {
+    display: inline;
+}
+
+.sch_item_status {
+    display: table-cell;
+    display: flex;
+}
+
+.sch_status_good {
+    color: #4CAF50;
+}
+
+.sch_status_warning {
+    color: #F57C00;
+}
+
+.sch_status_error {
+    color: #FF5252;
+}
+
+.sch_item_registration,
+.sch_item_boarding,
+.sch_item_takingoff,
+.sch_item_links,
+.sch_item_note {
+    padding-left: 0.2em;
+}
+
+.sch_item_registration {
+    width: 40%;
+    float: left;
+}
+
+.sch_item_boarding {
+    width: 35%;
+    float: left;
+}
+
+.sch_item_takingoff {
+    width: 15%;
+    float: left;
+}
+
+.sch_item_takingon {
+    width: 15%;
+    float: left;
+}
+
+.sch_item_note {
+    float: left;
+}
+
+.sch_nextday {
+    height: 2.375em;
+    text-align: center;
+    background: #E8E8E8;
+    font-weight: 700;
+}
+
+.sch_item_links {
+    clear: both;
+}
+
+.sch_modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.sch_modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sch_modal > div {
+    max-width: 37.5em;
+    position: relative;
+    margin: 10% auto;
+    padding: 0.1em 1em 1em;
+    border: 3px solid #222;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.sch_modal_close {
+    color: #BBB;
+    position: absolute;
+    right: 0.5em;
+    text-align: center;
+    top: 0.4em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sch_modal_close:hover {
+    color: #222;
+}
+
+.sch_scheme_image {
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 24.4em) {
+    .sch_item_flight {
+        margin-left: 1.875em;
+    }
+    .sch_item_company {
+        display: block;
+        display: flex;
+        min-width: 1.7em;
+        margin-left: -5.75em;
+    }
+}
+
+@media only screen and (min-width: 27.5em) {
+    .sch_item_airport {
+        min-width: 2.8em;
+        float: left;
+        display: block;
+        display: flex;
+    }
+    .sch_item_company {
+        margin-left: -8.55em;
+    }
+}
+
+@media only screen and (min-width: 36.25em) {
+    details.sch_item_details[open] {
+        min-height: 9.5em;
+    }
+    details.sch_item_details[open] .sch_item_expanded {
+        min-height: 7.125em;
+    }
+    .sch_item_airport {
+        min-width: 11.2em;
+    }
+    .sch_item_airport_medium {
+        display: inline;
+    }
+    .sch_item_airport_short {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sch_item_airport_short:before {
+        content: "\00a0";
+        display: inline;
+    }
+    .sch_item_company {
+        margin-left: -16.95em;
+    }
+    .sch_item_registration {
+        width: 25%;
+        float: left;
+    }
+    .sch_item_boarding {
+        width: 20%;
+        float: left;
+    }
+    .sch_item_takingoff {
+        width: 15%;
+        float: left;
+    }
+    .sch_item_note {
+        float: left;
+        width: 60%;
+    }
+    .sch_item_links {
+        width: 40%;
+        float: right;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 43.125em) {
+    .sch_item_company {
+        margin-left: 0;
+        width: 9.375em;
+    }
+    .sch_item_company_full {
+        display: inline;
+        padding-left: 0.2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sch_item_company_full:before {
+        content: "\00a0";
+        display: inline;
+    }
+    .sch_item_flight {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    .sch_item_plane {
+        display: block;
+        width: 4.2em;
+    }
+}
+
+@media only screen and (min-width: 50.5em) {
+    .sch_item_airport {
+        min-width: 14em;
+    }
+    .sch_item_airport_short {
+        display: none;
+    }
+    .sch_item_airport_full {
+        display: inline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sch_item_airport_full:before {
+        content: "\00a0";
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 53.5em) {
+    .sch_item_plane {
+        width: 7.5em;
+    }
+    .sch_item_plane_short {
+        display: none;
+    }
+    .sch_item_plane_full {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 58.75em) {
+    .sch_item_type {
+        width: 3.75%;
+    }
+    .sch_item_time {
+        width: 6.5%;
+    }
+    .sch_item_flight {
+        width: 7.4%;
+    }
+    .sch_item_airport {
+        width: 23.75%;
+    }
+    .sch_item_company {
+        width: 17.9%;
+    }
+    .sch_item_plane {
+        width: 14.4%;
+    }
+    .sch_item_registration {
+        width: 17.65%;
+    }
+    .sch_item_boarding {
+        width: 23.75%;
+    }
+    .sch_item_takingoff {
+        width: 14.4%;
+    }
+}
+
+
+/*Helpers*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+summary {
+    position: relative;
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::-moz-details-marker {
+    display: none;
+}
+
+summary::-o-details-marker {
+    display: none;
+}
+
+summary::details-marker {
+    display: none;
+}
+
+details::before {
+    display: none;
+}
+
+@media all {
+    summary:first-child {
+        text-indent: 0em !important;
+        /*override polifyl style*/
+    }
+}
